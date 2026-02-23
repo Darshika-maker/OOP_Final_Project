@@ -20,4 +20,4 @@ class Course:
     def __str__(self):
         if self._status == "upcoming":
             return f"{self._name} | Credits: {self._credits} | [UPCOMING]"
-        return f"{self._name} | Credits: {self._credits} | Grade: {self._grade}"
+        return f"{self._name} | Credits: {self._credits} | Grade: {self._grade}" 
