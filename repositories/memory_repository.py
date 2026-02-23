@@ -60,14 +60,14 @@ class InMemoryStudentRepository(StudentRepository):
         s5.add_course(Course("OOP", 5, 0, "upcoming"))
 
         s6 = Student("Sharma patel", "S006", "Sharma6")
-        s5.add_course(Course("Career Planning and Development 1", 2, 5))
-        s5.add_course(Course("ICT Business", 5, 4))
-        s5.add_course(Course("Finnish 1", 5, 3))
-        s5.add_course(Course("Data Management Systems 1",5,2))
-        s5.add_course(Course("Digital Technology Essentials",5, 5))
-        s5.add_course(Course("Web programming", 5, 0, "upcoming"))
-        s5.add_course(Course("Finnish 2", 5, 0, "upcoming"))
-        s5.add_course(Course("OOP", 5, 0, "upcoming"))
+        s6.add_course(Course("Career Planning and Development 1", 2, 5))
+        s6.add_course(Course("ICT Business", 5, 4))
+        s6.add_course(Course("Finnish 1", 5, 3))
+        s6.add_course(Course("Data Management Systems 1",5,2))
+        s6.add_course(Course("Digital Technology Essentials",5, 5))
+        s6.add_course(Course("Web programming", 5, 0, "upcoming"))
+        s6.add_course(Course("Finnish 2", 5, 0, "upcoming"))
+        s6.add_course(Course("OOP", 5, 0, "upcoming"))
 
         
 
