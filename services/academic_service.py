@@ -1,11 +1,14 @@
 class AcademicService:
+
     def display_upcoming(self, student):
-        print(f"\n--- Upcoming Courses for {student.get_name()} ---")
-        upcoming = [c for c in student.get_courses() if c.get_status() == "upcoming"]
+        upcoming_courses = [c for c in student.get_courses() if c.get_status() == "upcoming"]
         
-        if not upcoming:
-            print("No upcoming courses found.")
+        print("\n" + "=" * 50)
+        print("Upcoming Courses")
+        print("=" * 50)
+        if not upcoming_courses:
+            print("No upcoming courses.")
         else:
-            for c in upcoming:
+            for c in upcoming_courses:
                 print(c)
-        print("-" * 30)
+        print("=" * 50 + "\n")
