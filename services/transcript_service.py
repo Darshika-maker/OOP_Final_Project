@@ -4,9 +4,11 @@ class TranscriptService:
         total_points = 0
         total_credits = 0
 
+        # Only finished courses count toward GPA
         for c in student.get_courses():
-            total_points += c.get_grade() * c.get_credits()
-            total_credits += c.get_credits()
+            if c.get_status() == "finished":
+                total_points += c.get_grade() * c.get_credits()
+                total_credits += c.get_credits()
 
         if total_credits == 0:
             return 0.0
@@ -24,10 +26,16 @@ class TranscriptService:
         print(f"Student ID:   {student.get_student_id()}")
         print("-" * 50)
 
-        for c in student.get_courses():
-            print(c)
+        # Only finished courses are displayed
+        finished_courses = [c for c in student.get_courses() if c.get_status() == "finished"]
+        if not finished_courses:
+            print("No finished courses yet.")
+        else:
+            for c in finished_courses:
+                print(c)
 
         print("-" * 50)
-        print(f"Total Credits: {sum(c.get_credits() for c in student.get_courses())}")
+        total_credits = sum(c.get_credits() for c in finished_courses)
+        print(f"Total Credits: {total_credits}")
         print(f"GPA: {gpa:.2f}")
         print("=" * 50 + "\n")
