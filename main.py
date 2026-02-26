@@ -10,23 +10,17 @@ def main():
 
     print("\n--- KARELIA UNIVERSITY LOGIN ---")
 
-    student_id = input("Enter Student ID: ").strip()
-    student = repository.find_by_id(student_id)
-
-    if not student:
-        print("Error: Student ID not found.")
-        return
-
-    # Allow 3 password attempts
     attempts = 3
 
     while attempts > 0:
+        student_id = input("Enter Student ID: ").strip()
         password = input("Enter Password: ").strip()
 
-        if student.get_password() == password:
+        student = repository.find_by_id(student_id)
+
+        if student and student.get_password() == password:
             print("\nLogin successful!")
 
-            # MENU LOOP
             while True:
                 print(f"\nWelcome, {student.get_name()}!")
                 print("1. View Transcript (Finished Courses)")
@@ -44,11 +38,10 @@ def main():
                     return
                 else:
                     print("Invalid selection. Please try again.")
-            return
 
         else:
             attempts -= 1
-            print(f"Incorrect password. Attempts left: {attempts}")
+            print(f"Invalid ID or Password. Attempts left: {attempts}")
 
     print("Too many failed attempts. Program closed.")
 
