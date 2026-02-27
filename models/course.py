@@ -3,7 +3,7 @@ class Course:
         self._name = name
         self._credits = credits
         self._grade = grade
-        self._status = status  # "finished" or "upcoming"
+        self._status = status 
 
     def get_name(self):
         return self._name
